@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Erreur {{ status_code }}{% endblock %}
+
+{% block body %}
+<h1>Oups! Il y a une erreur</h1>
+<h2>Le serveur a renvoyé une erreur "{{ status_code }} {{ status_text }}".</h2>
+
+<div>
+    Vous essayez d'accéder à une ressource protégée.
+    Si vous estimez que votre demande est légitime, veuillez nous contacter afin de trouver une solution.
+</div>
+
+<div>
+    <ul>
+        <li><a href="/">accueil</a></li>
+        <li><a href="/login">authentification</a></li>
+        <li><a href="/register">inscription</a></li>
+    </ul>
+</div>
+{% endblock %}

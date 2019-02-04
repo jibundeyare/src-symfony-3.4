@@ -9,7 +9,10 @@ doctrine:
     dbal:
         # configure these for your database server
         driver: 'pdo_mysql'
-        server_version: '5.7'
+        # supports json type column
+        # server_version: '5.7'
+        # does not supports json type column
+        server_version: '5.6'
         charset: utf8mb4
         default_table_options:
             charset: utf8mb4
