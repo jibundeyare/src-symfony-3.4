@@ -3,7 +3,7 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Annotation\Method;
@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Method;
 /**
  * @Route("/")
  */
-class MainController extends Controller
+class MainController extends AbstractController
 {
     /**
      * @Route("/", name="main_index")

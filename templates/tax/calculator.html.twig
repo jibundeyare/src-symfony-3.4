@@ -1,0 +1,36 @@
+{# templates/tax/calculator.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Calculatrice de prix TVA comprise{% endblock %}
+
+{% block body %}
+<h1>Calculatrice de prix TVA comprise</h1>
+<p>
+    Les taux :
+    <ul>
+        <li>normal : 20.0 %</li>
+        <li>taux réduit 1 : 10.0 %</li>
+        <li>taux réduit 2 : 5.5 %</li>
+        <li>taux réduit 3 : 2.1 %</li>
+    </ul>
+    <em>attention, utiliser un point `.` et non une virgule `,` pour les valeurs décimales</em>
+</p>
+<form method="post">
+    {% if errors.price is defined %}
+    <div>
+        {{ errors.price }}
+    </div>
+    {% endif %}
+    <div>
+        <label for="price"></label>
+        <input type="text" name="price" id="price" value="{{ price }}" />
+        <select name="rate" id="rate">
+            {% for key in rates|keys %}
+            <option value="{{ rates[key] }}" {% if rate == rates[key] %}selected{% endif %}>{{ key }}</option>
+            {% endfor %}
+        </select>
+        <button>Calculer</button>
+    </div>
+</form>
+<p>Prix avec la TVA : <span id="tip">{{ tip|number_format(2, '.', ' ') }}<span></p>
+{% endblock %}
