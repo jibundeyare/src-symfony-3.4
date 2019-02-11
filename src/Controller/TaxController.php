@@ -35,7 +35,7 @@ class TaxController extends AbstractController
 
             if (!$errors) {
                 $tc = new TaxCalculator();
-                $tip = $tc->getTaxIncludedPrice($price);
+                $tip = $tc->getTaxIncludedPrice($price, $rate);
             }
         }
 

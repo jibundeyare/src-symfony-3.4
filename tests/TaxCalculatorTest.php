@@ -26,6 +26,43 @@ class TaxCalculatorTest extends TestCase
 
         $tc = new TaxCalculator();
         $tip = $tc->getTaxIncludedPrice($price, TaxCalculator::RATES['normal']);
+
+        $this->assertEquals($taxIncludedPrice, $tip);
+    }
+
+    public function testReducedRate1Price()
+    {
+        $price = 10;
+        $taxRate = 0.1;
+        $taxIncludedPrice = $price + $price * $taxRate;
+
+        $tc = new TaxCalculator();
+        $tip = $tc->getTaxIncludedPrice($price, TaxCalculator::RATES['taux réduit 1']);
+
+        $this->assertEquals($taxIncludedPrice, $tip);
+    }
+
+    public function testReducedRate2Price()
+    {
+        $price = 10;
+        $taxRate = 0.055;
+        $taxIncludedPrice = $price + $price * $taxRate;
+
+        $tc = new TaxCalculator();
+        $tip = $tc->getTaxIncludedPrice($price, TaxCalculator::RATES['taux réduit 2']);
+
+        $this->assertEquals($taxIncludedPrice, $tip);
+    }
+
+    public function testReducedRate3Price()
+    {
+        $price = 10;
+        $taxRate = 0.021;
+        $taxIncludedPrice = $price + $price * $taxRate;
+
+        $tc = new TaxCalculator();
+        $tip = $tc->getTaxIncludedPrice($price, TaxCalculator::RATES['taux réduit 3']);
+
         $this->assertEquals($taxIncludedPrice, $tip);
     }
 

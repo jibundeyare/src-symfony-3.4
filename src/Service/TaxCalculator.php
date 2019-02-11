@@ -4,7 +4,7 @@
 namespace App\Service;
 
 /**
- *
+ * TaxCalculator
  */
 class TaxCalculator
 {
@@ -33,13 +33,13 @@ class TaxCalculator
                 $taxIncludedPrice = $price + $price * 0.2;
                 break;
             case self::RATES['taux réduit 1']:
-                $taxIncludedPrice = $price + $price * 0.2;
+                $taxIncludedPrice = $price + $price * 0.1;
                 break;
             case self::RATES['taux réduit 2']:
-                $taxIncludedPrice = $price + $price * 0.2;
+                $taxIncludedPrice = $price + $price * 0.055;
                 break;
             case self::RATES['taux réduit 3']:
-                $taxIncludedPrice = $price + $price * 0.2;
+                $taxIncludedPrice = $price + $price * 0.021;
                 break;
             default:
                 throw new \Exception("Taux de TVA $taxRate inconnu");
