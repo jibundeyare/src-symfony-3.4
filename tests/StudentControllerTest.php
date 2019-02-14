@@ -2,7 +2,6 @@
 
 namespace App\Tests;
 
-use App\Service\TaxCalculator;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class StudentControllerTest extends WebTestCase
