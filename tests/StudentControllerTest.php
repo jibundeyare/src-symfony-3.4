@@ -6,6 +6,9 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class StudentControllerTest extends WebTestCase
 {
+    /**
+     * Ce test permet de vérifier que la liste des students s'affiche
+     */
     public function testStudentsIndexPage()
     {
         // créer un client
@@ -20,6 +23,9 @@ class StudentControllerTest extends WebTestCase
         $this->assertContains('Student index', $crawler->filter('h1')->text());
     }
 
+    /**
+     * Ce test permet de vérifier que la page de création d'un student est accessible depuis la liste des students et qu'elle s'affiche
+     */
     public function testCreateNewStudentPage()
     {
         // créer un client
@@ -40,6 +46,9 @@ class StudentControllerTest extends WebTestCase
         $this->assertContains('Create new Student', $crawler->filter('h1')->text());
     }
 
+    /**
+     * Ce test permet de vérifier que la page de création d'un student ajoute bien un student à la liste
+     */
     public function testCreateNewStudent()
     {
         // créer un client
@@ -76,6 +85,9 @@ class StudentControllerTest extends WebTestCase
         $this->assertContains('foo.bar@example.com', $crawler->filter('table')->text());
     }
 
+    /**
+     * Ce test permet de vérifier que la page de modification d'un student modifie bien un student dans la liste
+     */
     public function testEditStudent()
     {
         // créer un client
@@ -120,6 +132,9 @@ class StudentControllerTest extends WebTestCase
         $this->assertContains('lorem.ipsum@example.com', $crawler->filter('table')->text());
     }
 
+    /**
+     * Ce test permet de vérifier que le formulaire de suppression de la page de modification d'un student supprime bien un student dans la liste
+     */
     public function testDeleteStudentForm()
     {
         // créer un client
