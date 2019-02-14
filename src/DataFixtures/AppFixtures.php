@@ -26,7 +26,7 @@ class AppFixtures extends Fixture
         $user->setEmail('supadmin@example.com');
         $user->setRoles(['ROLE_SUPER_ADMIN']);
         // encoder le mot de passe
-        $password = $this->encoder->encodePassword($user, '123');
+        $password = $this->encoder->encodePassword($user, '123456');
         $user->setPassword($password);
         $manager->persist($user);
 
@@ -35,7 +35,7 @@ class AppFixtures extends Fixture
         $user->setEmail('admin@example.com');
         $user->setRoles(['ROLE_ADMIN']);
         // encoder le mot de passe
-        $password = $this->encoder->encodePassword($user, '123');
+        $password = $this->encoder->encodePassword($user, '123456');
         $user->setPassword($password);
         $manager->persist($user);
 
